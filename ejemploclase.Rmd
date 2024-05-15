@@ -1,0 +1,21 @@
+---
+title: "Ejemplo_clase13"
+output: html_document
+date: "2024-05-15"
+---
+Inicialmente voy a llamar los paquetes que quiero usar en la clase
+
+```{r , echo=T, eval=T, message=F}
+#llamar paquetes
+require(pacman)
+p_load(rio,tidyverse,mapview,osmdata,tmaptools)
+
+#data
+casa <- geocode_OSM("Universidad de los Andes" , as.sf=T)
+
+```
+
+A continuación voy a pintar el objeto **db** que contiene la geocodificación de `r, casa$query`
+
+```{r}
+mapview(casa)
